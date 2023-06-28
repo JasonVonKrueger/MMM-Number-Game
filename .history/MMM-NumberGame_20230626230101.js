@@ -3,12 +3,6 @@ Module.register('MMM-NumberGame', {
   start() {
     const self = this;
 
-    Log.info("Starting module: " + self.name);
-
-  },
-
-  getStyles: function () {
-    return ["MMM-NumberGame.css"];
   },
 
   getDom() {

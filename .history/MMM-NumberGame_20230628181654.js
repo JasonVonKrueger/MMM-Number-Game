@@ -7,10 +7,6 @@ Module.register('MMM-NumberGame', {
 
   },
 
-  getStyles: function () {
-    return ["MMM-NumberGame.css"];
-  },
-
   getDom() {
     const wrapper = document.createElement('div');
 
