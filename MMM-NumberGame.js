@@ -18,7 +18,7 @@ Module.register('MMM-NumberGame', {
         <div class="wrapper">
             <div id="game_box">
                 <div id="number"></div>
-                <div id="player_message" class="hidden">
+                <div id="player_message" class="shidden">
                 Enter the number you saw: 
                 <input type="text" id="player_guess"></input>
                 </div>
