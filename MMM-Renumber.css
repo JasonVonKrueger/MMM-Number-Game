@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@100;300;400;700&display=swap');
+
 .hidden {
     display: none;
 }
 
 .wrapper {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 1rem;
 }
 
 #game_box { 

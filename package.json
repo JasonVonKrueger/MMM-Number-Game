@@ -1,8 +1,8 @@
 {
-  "name": "mmm-number-game",
+  "name": "mmm-renumber",
   "version": "1.0.0",
-  "description": "Number game for Magic Mirror.",
-  "main": "MMM-NumberGame.js",
+  "description": "Number memory game for Magic Mirror.",
+  "main": "MMM-Renumber.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
