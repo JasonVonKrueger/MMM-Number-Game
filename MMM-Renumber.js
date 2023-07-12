@@ -31,7 +31,7 @@ Module.register('MMM-Renumber', {
 
     wrapper.innerHTML = markup;
 
-    showNumber()
+    //showNumber()
 
     return wrapper;
 
