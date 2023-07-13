@@ -1,45 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@100;300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@100;300;400;700&display=swap");
 
 .hidden {
-    display: none;
+  xdisplay: none;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
 }
 
 .wrapper {
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #666;
-    border-radius: 6px;
-    padding: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #666;
+  xborder-radius: 6px;
+  xpadding: 1rem;
+  width: 20vw;
 }
 
-#game_box { 
-    text-align: center;
-    padding: 2rem;
-    color: #0cb828;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5rem;
+.title {
+  border: 1px solid #666;
+  xborder-radius: 6px;
+  xpadding: 1rem;
+  width: 100%;
+  text-align: center;
+  background-color: #666;
 }
 
-#game_box #number { 
-    color: #fff;
-    font-size: 4rem; 
+#game_box {
+  text-align: center;
+  padding: 2rem;
+  xcolor: #0cb828;
+  margin-left: auto;
+  margin-right: auto;
+  xfont-size: 1.5rem;
+}
+
+#game_box #number {
+  xcolor: #fff;
+  font-size: 3rem;
 }
 
 #game_box #player_guess {
-    text-align: center;
-    font-size: 1.5rem;
-    width: 75px;
-    border: 0px;
-    border-bottom: 2px solid #bbb;
-    padding: .5rem;
-    color: #ccc;
-    background: transparent;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 75px;
+  border: 0px;
+  border-bottom: 2px solid #bbb;
+  padding: 0.5rem;
+  color: #ccc;
+  background: transparent;
 }
 
 #game_box #result_message {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }

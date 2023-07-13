@@ -1,13 +1,13 @@
 Module.register('MMM-Renumber', {
 
   start() {
-    //const self = this;
-    this.numbers = [];
-    this.player_guesses = [];
-    this.level = 1;
-    this.max_levels = 5;
+    const self = this;
+    self.numbers = [];
+    self.player_guesses = [];
+    self.level = 1;
+    self.max_levels = 5;
 
-    Log.info("Starting module: " + this.name);
+    Log.info("Starting module: " + self.name);
 
 
   },
@@ -34,8 +34,8 @@ Module.register('MMM-Renumber', {
     `;
 
     wrapper.innerHTML = markup;
-
-    this.showNumber();
+    this.sendSocketNotification('RENUMBER_REGISTER_CONFIG', this.config);
+    //self.showNumber();
 
     return wrapper;
 
