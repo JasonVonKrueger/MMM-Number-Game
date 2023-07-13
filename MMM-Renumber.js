@@ -1,9 +1,13 @@
 Module.register('MMM-Renumber', {
 
   start() {
-    const self = this;
+    //const self = this;
+    this.numbers = [];
+    this.player_guesses = [];
+    this.level = 1;
+    this.max_levels = 5;
 
-    Log.info("Starting module: " + self.name);
+    Log.info("Starting module: " + this.name);
 
 
   },
@@ -31,7 +35,7 @@ Module.register('MMM-Renumber', {
 
     wrapper.innerHTML = markup;
 
-    //showNumber()
+    this.showNumber();
 
     return wrapper;
 
@@ -39,16 +43,16 @@ Module.register('MMM-Renumber', {
 
   async handleGuess(data) {
     document.querySelector('#player_guess').value += data.number;
-    COMPONENT.player_guesses.push(parseInt(data.number));
+    this.player_guesses.push(parseInt(data.number));
 
-    if (COMPONENT.player_guesses.length === COMPONENT.numbers.length) {
-      if (COMPONENT.player_guesses.join('') === COMPONENT.numbers.join('')) {
-        COMPONENT.querySelector('#result_message').innerHTML = 'Good job!';
-        await sleep(1200);
+    if (this.player_guesses.length === this.numbers.length) {
+      if (this.player_guesses.join('') === this.numbers.join('')) {
+        this.querySelector('#result_message').innerHTML = 'Good job!';
+        await this.sleep(1200);
         reset(true);
       } else {
-        COMPONENT.querySelector('#result_message').innerHTML = 'Nope! Try again.';
-        await sleep(1200);
+        this.querySelector('#result_message').innerHTML = 'Nope! Try again.';
+        await this.sleep(1200);
         reset(false);
       }
     }
@@ -58,22 +62,22 @@ Module.register('MMM-Renumber', {
     let n = Math.floor(Math.random() * 9)
     document.querySelector('#number').innerHTML = n;
 
-    await sleep(1500);
+    await this.sleep(1500);
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
   },
 
   reset(result) {
-    if (result) COMPONENT.level++
-    else COMPONENT.level = 1
+    if (result) this.level++
+    else this.level = 1
 
-    COMPONENT.numbers.length = 0;
-    COMPONENT.player_guesses.length = 0;
-    COMPONENT.querySelector('#player_message').classList.add('hidden');
-    COMPONENT.querySelector('#player_guess').value = '';
-    COMPONENT.querySelector('#result_message').innerHTML = '';
+    this.numbers.length = 0;
+    this.player_guesses.length = 0;
+    this.querySelector('#player_message').classList.add('hidden');
+    this.querySelector('#player_guess').value = '';
+    this.querySelector('#result_message').innerHTML = '';
 
-    showNumber();
+    this.showNumber();
   },
 
   sleep(ms) {
