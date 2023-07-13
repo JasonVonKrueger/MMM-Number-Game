@@ -1,15 +1,16 @@
 Module.register('MMM-Renumber', {
+  defaults: {
+    maxLevels: 15,
+
+  },
 
   start() {
     const self = this;
     self.numbers = [];
     self.player_guesses = [];
     self.level = 1;
-    self.max_levels = 5;
 
     Log.info("Starting module: " + self.name);
-
-
   },
 
   getStyles: function () {
@@ -34,7 +35,7 @@ Module.register('MMM-Renumber', {
     `;
 
     wrapper.innerHTML = markup;
-    this.sendSocketNotification('RENUMBER_REGISTER_CONFIG', this.config);
+    //this.sendSocketNotification('RENUMBER_', this.config);
     //self.showNumber();
 
     return wrapper;
@@ -68,8 +69,10 @@ Module.register('MMM-Renumber', {
   },
 
   reset(result) {
-    if (result) this.level++
-    else this.level = 1
+    if (result) this.level++;
+    else this.level = 1;
+
+    //this.config.maxLevels
 
     this.numbers.length = 0;
     this.player_guesses.length = 0;
@@ -77,11 +80,19 @@ Module.register('MMM-Renumber', {
     this.querySelector('#player_guess').value = '';
     this.querySelector('#result_message').innerHTML = '';
 
-    this.showNumber();
+    //this.showNumber();
   },
 
   sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+  },
+
+	socketNotificationReceived: function(notification, payload) {
+		if (notification === 'START_RENUMBER'){
+			//this.sendNotification(this.config.notificationMessage, payload);
+      console.log('yoooo')
+      alert('yo');
+		}
+	},
 
 })
