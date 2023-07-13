@@ -6,7 +6,7 @@
 
 
 
-.wrapper {
+#mmm-renumber {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   display: flex;
@@ -14,12 +14,10 @@
   justify-content: center;
   align-items: center;
   border: 1px solid #666;
-  xborder-radius: 6px;
-  xpadding: 1rem;
   width: 20vw;
 }
 
-.title {
+#mmm-renumber .title {
   border: 1px solid #666;
   xborder-radius: 6px;
   xpadding: 1rem;
@@ -28,7 +26,7 @@
   background-color: #666;
 }
 
-#game_box {
+#mmm-renumber #game_box {
   text-align: center;
   padding: 2rem;
   xcolor: #0cb828;
@@ -37,12 +35,12 @@
   xfont-size: 1.5rem;
 }
 
-#game_box #number {
+#mmm-renumber #game_box #number {
   xcolor: #fff;
   font-size: 3rem;
 }
 
-#game_box #player_guess {
+#mmm-renumber #game_box #player_guess {
   text-align: center;
   font-size: 1.5rem;
   width: 75px;
@@ -53,6 +51,6 @@
   background: transparent;
 }
 
-#game_box #result_message {
+#mmm-renumber #game_box #result_message {
   margin-top: 1rem;
 }

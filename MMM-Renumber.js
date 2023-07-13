@@ -21,7 +21,7 @@ Module.register('MMM-Renumber', {
     const wrapper = document.createElement('div');
 
     let markup = `
-          <div id="mmm-renumber" class="wrapper">
+          <div id="mmm-renumber">
             <div class="title">Renumber</div>
             <div id="game_box">
             <div id="number"></div>
