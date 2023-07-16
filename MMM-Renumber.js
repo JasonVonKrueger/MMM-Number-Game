@@ -38,7 +38,7 @@ Module.register('MMM-Renumber', {
     wrapper.innerHTML = markup;
     //this.sendSocketNotification('RENUMBER_', this.config);
     //self.showNumber();
-
+    wrapper.classList.add('hidden');
     return wrapper;
 
   },
@@ -88,7 +88,11 @@ Module.register('MMM-Renumber', {
     return new Promise(resolve => setTimeout(resolve, ms));
   },
 
-  socketNotificationReceived: function(notification, payload) {
+  sendSocketNotification(notification, payload) {
+    this.socket().sendNotification(notification, payload);
+  },
+
+  socketNotificationReceived(notification, payload) {
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
   },
 

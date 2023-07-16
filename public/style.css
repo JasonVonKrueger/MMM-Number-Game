@@ -1,17 +1,15 @@
 body {
   background-color: #000;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.push-button {
-  text-align: center;
-  cursor: pointer;
-  padding: .5rem;
-  background-color: #f25022;
-  box-shadow: 0 0 0 0 #f25022 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #c93a12, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-  transition: 0.15s;
-  font-size: 1rem;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green; 
 }
 
 .numpad {
@@ -27,14 +25,16 @@ body {
     flex: 1 0 31.3333%;
     color: white;
     font-size: 1rem;
+    background-color: green;
+    padding: .5rem;
   }
   
-  .numpad-button.push-button {
+  .numpad-button {
     transition: 0.5s;
     box-shadow: none;
   }
   
-  .numpad-button.push-button:active,
-  .numpad-button.push-button.activated {
+  .numpad-button:active,
+  .numpad-button.activated {
     transform: translateY(8px);
   }
