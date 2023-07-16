@@ -1,16 +1,17 @@
 Module.register('MMM-Renumber', {
   defaults: {
-    maxLevels: 15,
 
   },
 
   start() {
-    const self = this;
-    self.numbers = [];
-    self.player_guesses = [];
-    self.level = 1;
+    //const self = this;
+    this.numbers = [];
+    this.player_guesses = [];
+    this.level = 1;
+    this.hidden = true;
+    this.max_levels = this.config.maxLevels || 10;
 
-    Log.info("Starting module: " + self.name);
+    Log.info("Starting module: " + this.name);
   },
 
   getStyles: function () {
@@ -87,12 +88,8 @@ Module.register('MMM-Renumber', {
     return new Promise(resolve => setTimeout(resolve, ms));
   },
 
-	socketNotificationReceived: function(notification, payload) {
-		if (notification === 'START_RENUMBER'){
-			//this.sendNotification(this.config.notificationMessage, payload);
-      console.log('yoooo')
-      alert('yo');
-		}
-	},
+  socketNotificationReceived: function(notification, payload) {
+    Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+  },
 
 })
