@@ -1,9 +1,10 @@
 body {
   background-color: #000;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .push-button {
-  width: 80px;
   text-align: center;
   cursor: pointer;
   padding: .5rem;
@@ -14,7 +15,6 @@ body {
 }
 
 .numpad {
-    height: 500px;
     display: flex;
     flex-flow: row wrap;
     gap: .25rem;
@@ -26,7 +26,7 @@ body {
     justify-content: center;
     flex: 1 0 31.3333%;
     color: white;
-    font-size: 2rem;
+    font-size: 1rem;
   }
   
   .numpad-button.push-button {
