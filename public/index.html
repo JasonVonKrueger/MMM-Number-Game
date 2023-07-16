@@ -7,8 +7,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-    <link rel="stylesheet" type="text/css" href="vendor/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="modules/MMM-Remote-Control/remote.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="apple-touch-icon" href="modules/MMM-Remote-Control/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="MagicRemote">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,67 +17,52 @@
 </head>
 
 <body>
-    THIS is a test
-    <div class="container normal fill">
-        <div id="module_1_MMM-Renumber-Remote" class="fill">
+    <style>
+        .numpad {
+          height: 500px;
+          display: flex;
+          flex-flow: row wrap;
+          gap: .25rem;
+        }
+        
+        .numpad-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1 0 31.3333%;
+          color: white;
+          font-size: 2rem;
+        }
+        
+        .numpad-button.push-button {
+          transition: 0.5s;
+          box-shadow: none;
+        }
+        
+        .numpad-button.push-button:active,
+        .numpad-button.push-button.activated {
+          transform: translateY(8px);
+        }
+      </style>
 
-            <style>
-                .hidden {
-                    display: none;
-                }
+    <div class="numpad">
+        <div class="numpad-button push-button">1</div>
+        <div class="numpad-button push-button">2</div>
+        <div class="numpad-button push-button">3</div>
+        <div class="numpad-button push-button">4</div>
+        <div class="numpad-button push-button">5</div>
+        <div class="numpad-button push-button">6</div>
+        <div class="numpad-button push-button">7</div>
+        <div class="numpad-button push-button">8</div>
+        <div class="numpad-button push-button">9</div>
+        <div class="numpad-button push-button">0</div>
+    </div>  
 
-                .wrapper {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
 
-                #game_box {
-                    text-align: center;
-                    padding: 2rem;
-                    color: #0cb828;
-                    margin-left: auto;
-                    margin-right: auto;
-                    font-size: 1.5rem;
-                }
-
-                #game_box #number {
-                    color: #fff;
-                    font-size: 4rem;
-                }
-
-                #game_box #player_guess {
-                    text-align: center;
-                    font-size: 1.5rem;
-                    width: 75px;
-                    border: 0px;
-                    border-bottom: 2px solid #bbb;
-                    padding: .5rem;
-                    color: #ccc;
-                    background: transparent;
-                }
-
-                #game_box #result_message {
-                    margin-top: 1rem;
-                }
-            </style>
-
-            <div class="wrapper">
-                <div id="game_box">
-                    <div id="number"></div>
-                    <div id="player_message" class="hidden">
-                        Enter the number you saw:
-                        <input type="text" id="player_guess"></input>
-                    </div>
-                    <div id="result_message"></div>
-                </div>
-            </div>
-
-        </div>
-        <script type="text/javascript" src="config/config.js"></script>
-        <script type="text/javascript" src="socket.io/socket.io.js"></script>
-        <script type="text/javascript" src="js/socketclient.js"></script>
-        <!-- <script type="text/javascript" src="modules/MMM-Renumber/renumber.js"></script> -->
+    <!-- <script type="text/javascript" src="config/config.js"></script>
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/socketclient.js"></script> -->
+    <!-- <script type="text/javascript" src="modules/MMM-Renumber/renumber.js"></script> -->
 </body>
 
 </html>
