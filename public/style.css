@@ -1,3 +1,7 @@
+body {
+  background-color: #000;
+}
+
 .numpad {
     height: 500px;
     display: flex;

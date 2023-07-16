@@ -6,9 +6,9 @@ module.exports = NodeHelper.create({
 	start: function() {
         this.started = false;
 
-        this.expressApp.get("/renumber", function (req, res) {
-            res.send("GET request to /renumber");
-        });
+        // this.expressApp.get("/renumber", function (req, res) {
+        //     res.send("GET request to /renumber");
+        // });
 
         //this.expressApp.use("/" + this.name, express.static(this.path + "/public"));
 
