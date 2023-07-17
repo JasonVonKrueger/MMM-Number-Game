@@ -6,6 +6,8 @@ module.exports = NodeHelper.create({
 	start: function() {
         this.started = false;
 
+        this.sendSocketNotification('RENUMBER_STARTED', { foo: 'bar' });
+
         // this.expressApp.get("/renumber", function (req, res) {
         //     res.send("GET request to /renumber");
         // });

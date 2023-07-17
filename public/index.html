@@ -39,6 +39,7 @@
     <script>
         function handleNumPadButton(e) {
             const number = this.innerHTML;
+            socket.sendNotification()
             socket.emit('NUMPAD_BUTTON_CLICK', {
                 number: number
             });
