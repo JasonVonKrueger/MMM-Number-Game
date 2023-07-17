@@ -8,38 +8,47 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="/js/socketclient.js"></script> 
+    <script type="text/javascript" src="/js/socketclient.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <div id="renumber-remote-wrapper" class="center">
 
-    <div id="renumber-remote-wrapper">
-    </div>
-    
-    <div>
-      <div class="center">
-        <button>Play</button>
+        <div class="landing">
+          <div>
+            <button class="play-button">Play</button>
+          </div>
+        </div>
+      
+        <div class="numpad hidden">
+          <div class="numpad-button">1</div>
+          <div class="numpad-button">2</div>
+          <div class="numpad-button">3</div>
+          <div class="numpad-button">4</div>
+          <div class="numpad-button">5</div>
+          <div class="numpad-button">6</div>
+          <div class="numpad-button">7</div>
+          <div class="numpad-button">8</div>
+          <div class="numpad-button">9</div>
+          <div class="numpad-button" style="grid-column-start: 1; grid-column-end: 4; text-align: center;">0</div>
+        </div>   
+      
       </div>
-    </div>
+            
 
-    <div class="numpad">
-        <div class="numpad-button">1</div>
-        <div class="numpad-button">2</div>
-        <div class="numpad-button">3</div>
-        <div class="numpad-button">4</div>
-        <div class="numpad-button">5</div>
-        <div class="numpad-button">6</div>
-        <div class="numpad-button">7</div>
-        <div class="numpad-button">8</div>
-        <div class="numpad-button">9</div>
-        <div class="numpad-button">0</div>
-      </div>
 
     <script>
         function handleNumPadButton(e) {
             const number = this.innerHTML;
-            socket.emit('NUMPAD_BUTTON_CLICK', { number: number });
+            socket.emit('NUMPAD_BUTTON_CLICK', {
+                number: number
+            });
+        }
+
+        function handlePlayClick(e) {
+            document.querySelector('.landing').classList.add('hidden');
+            document.querySelector('.numpad').classList.remove('hidden');
         }
 
         const socket = io();
@@ -48,6 +57,9 @@
             btn.addEventListener('touch', handleNumPadButton, false);
             btn.addEventListener('click', handleNumPadButton, false);
         });
+
+        document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
+
     </script>
 
     <!-- <script type="text/javascript" src="config/config.js"></script>

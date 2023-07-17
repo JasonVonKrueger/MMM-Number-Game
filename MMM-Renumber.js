@@ -93,6 +93,7 @@ Module.register('MMM-Renumber', {
   },
 
   socketNotificationReceived(notification, payload) {
+    alert('yo')
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
   },
 
