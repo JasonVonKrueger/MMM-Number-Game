@@ -49,10 +49,10 @@
             document.querySelector('.numpad').classList.remove('hidden');
         }
 
-        if (typeof socket === 'undefined') {
+        //if (typeof socket === 'undefined') {
             const socket = new MMSocket('MMM-Renumber');
             //const socket = io();
-        }
+        //}
 
         document.querySelectorAll('.numpad-button').forEach(function(btn) {
             btn.addEventListener('touch', handleNumPadButton, false);
