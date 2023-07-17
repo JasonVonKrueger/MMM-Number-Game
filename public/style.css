@@ -23,15 +23,21 @@ body {
 .numpad {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
+  column-gap: 1rem;
+  row-gap: 1rem;
 }
 
 .numpad-button {
   color: white;
   font-size: 1rem;
   background-color: green;
-  padding: .5rem;
+  padding: 1.5rem;
+}
+
+.zero {
+  grid-column-start: 1; 
+  grid-column-end: 4; 
+  text-align: center;
 }
 
 .numpad-button {
