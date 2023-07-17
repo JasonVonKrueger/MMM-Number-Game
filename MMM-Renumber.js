@@ -52,7 +52,8 @@ Module.register('MMM-Renumber', {
         this.querySelector('#result_message').innerHTML = 'Good job!';
         await this.sleep(1200);
         reset(true);
-      } else {
+      } 
+      else {
         this.querySelector('#result_message').innerHTML = 'Nope! Try again.';
         await this.sleep(1200);
         reset(false);
@@ -88,13 +89,13 @@ Module.register('MMM-Renumber', {
     return new Promise(resolve => setTimeout(resolve, ms));
   },
 
-  sendSocketNotification(notification, payload) {
-    this.socket().sendNotification(notification, payload);
-  },
+  // sendSocketNotification(notification, payload) {
+  //   this.socket().sendNotification(notification, payload);
+  // },
 
   socketNotificationReceived(notification, payload) {
-    this.hide();
-    document.querySelector('#number').innerHTML = JSON.stringify(payload);
+    //this.hide();
+    //document.querySelector('#number').innerHTML = JSON.stringify(payload);
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
   },
 
