@@ -1,11 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
 body {
-  background-color: #000;
+  background-color: #232324;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
 .hidden {
   display: none !important;
+}
+
+#header {
+  background: #474344;
+  background: linear-gradient(to top, #474344, #1B1C1C);
+  color: #fff;
+  text-shadow: 2px 2px 4px #272827;
+  border-bottom: .1rem inset rgb(20, 19, 19);
+  font-size: 1.3rem;
+  text-align: center;
+  grid-row: 1;
+  height: 40px;
+  justify-self: auto;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
 }
 
 .center {
@@ -29,9 +54,9 @@ body {
 
 .numpad-button {
   color: white;
-  font-size: 1rem;
+  font-size: 3rem;
   background-color: green;
-  padding: 1.5rem;
+  padding: 2.5rem;
 }
 
 .zero {

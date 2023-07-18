@@ -1,0 +1,14 @@
+{
+    "short_name": "Renumber Remote Control",
+    "name": "Magic Mirror remote control for the Renumber game.",
+    "icons": [{
+      "src": "/resources/images/favicon.ico",
+      "type": "image/png",
+      "sizes": "200x200"
+    }],
+    "id": "/MMM-Renumber/remote.html",
+    "start_url": "/MMM-Renumber/remote.html",
+    "display": "fullscreen",
+    "scope": "/",
+    "description": "Magic Mirror remote control for the Renumber game."
+  }
