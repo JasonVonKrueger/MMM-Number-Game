@@ -11,6 +11,8 @@ Module.register('MMM-Renumber', {
     this.hidden = true;
     this.max_levels = this.config.maxLevels || 10;
 
+    this.hide();
+
     Log.info("Starting module: " + this.name);
   },
 
@@ -92,6 +94,14 @@ Module.register('MMM-Renumber', {
   // sendSocketNotification(notification, payload) {
   //   this.socket().sendNotification(notification, payload);
   // },
+
+  notificationReceived: function(notification, payload, sender) {
+    if (sender) {
+      Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+    } else {
+      Log.log(this.name + " received a system notification: " + notification);
+    }
+  },
 
   socketNotificationReceived(notification, payload) {
     //this.hide();
