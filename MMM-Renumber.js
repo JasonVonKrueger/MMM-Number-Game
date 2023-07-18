@@ -11,8 +11,6 @@ Module.register('MMM-Renumber', {
     this.hidden = true;
     this.max_levels = this.config.maxLevels || 10;
 
-    this.hide();
-
     Log.info("Starting module: " + this.name);
   },
 

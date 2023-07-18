@@ -47,10 +47,11 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'RENUMBER_STARTED' && this.started == false) {     
-            const self = this;
+        Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+        // if (notification === 'RENUMBER_STARTED' && this.started == false) {     
+        //     const self = this;
 
-            this.started = true;
-        };
-      }
+        //     this.started = true;
+        // };
+    }
 });
