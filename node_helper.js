@@ -6,7 +6,7 @@ module.exports = NodeHelper.create({
 	start: function() {
         this.started = false;
 
-        this.sendSocketNotification('RENUMBER_STARTED', { foo: 'bar' });
+       // this.sendSocketNotification('RENUMBER_STARTED', { foo: 'bar' });
 
         // this.expressApp.get("/renumber", function (req, res) {
         //     res.send("GET request to /renumber");
@@ -47,7 +47,8 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
-        Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+        console.info('socket notification received');
+       // Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
         // if (notification === 'RENUMBER_STARTED' && this.started == false) {     
         //     const self = this;
 

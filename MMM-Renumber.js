@@ -104,7 +104,7 @@ Module.register('MMM-Renumber', {
   socketNotificationReceived(notification, payload) {
     //this.hide();
     //document.querySelector('#number').innerHTML = JSON.stringify(payload);
-    Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+    Log.log(this.name + " received a fat socket notification: " + notification + " - Payload: " + payload);
   },
 
 })
