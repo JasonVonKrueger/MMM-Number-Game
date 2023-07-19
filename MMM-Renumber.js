@@ -8,7 +8,7 @@ Module.register('MMM-Renumber', {
     this.numbers = [];
     this.player_guesses = [];
     this.level = 1;
-    this.hidden = true;
+    //this.hidden = true;
     this.max_levels = this.config.maxLevels || 10;
 
     Log.info("Starting module: " + this.name);
