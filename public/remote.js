@@ -785,29 +785,3 @@ var buttons = {
 // Initialize socket connection
 Remote.sendSocketNotification("REMOTE_CLIENT_CONNECTED");
 Remote.sendSocketNotification("REMOTE_ACTION", { data: "translations" });
-Remote.loadButtons(buttons);
-Remote.loadOtherElements();
-
-Remote.setStatus("none");
-
-if (window.location.hash) {
-    Remote.showMenu(window.location.hash.substring(1));
-} else {
-    Remote.showMenu("main-menu");
-}
-
-window.onhashchange = function() {
-    if (Remote.skipHashChange) {
-        Remote.skipHashChange = false;
-        return;
-    }
-    if (window.location.hash) {
-        Remote.showMenu(window.location.hash.substring(1));
-    } else {
-        Remote.showMenu("main-menu");
-    }
-};
-
-// loading successful, remove error message
-var loadError = document.getElementById("load-error");
-loadError.parentNode.removeChild(loadError);
