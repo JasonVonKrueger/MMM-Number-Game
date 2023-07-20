@@ -5,8 +5,6 @@ var Remote = {
     types: ["string", "number", "boolean", "array", "object", "null", "undefined"],
     values: ["", 0.0, true, [], {}, null, undefined],
 
- 
-
     /* socket()
      * Returns a socket object. If it doesn"t exist, it"s created.
      * It also registers the notification callback.
@@ -46,9 +44,6 @@ var Remote = {
     },
 
 
-
-
-  
 
     showModule: function(id, force) {
         if (force) {
@@ -178,8 +173,14 @@ var Remote = {
  
 };
 
+function handlePlayClick(e) {
+    document.querySelector('.landing').classList.add('hidden');
+    document.querySelector('.numpad').classList.remove('hidden');
+}
 
 // Initialize socket connection
 console.log('init remote');
 Remote.sendSocketNotification("REMOTE_CLIENT_CONNECTED");
 Remote.sendSocketNotification("REMOTE_ACTION", { data: "translations" });
+
+document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
