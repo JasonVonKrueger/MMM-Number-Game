@@ -1,9 +1,6 @@
 
 var Remote = {
     name: "MMM-Renumber",
-    currentMenu: "main-menu",
-    types: ["string", "number", "boolean", "array", "object", "null", "undefined"],
-    values: ["", 0.0, true, [], {}, null, undefined],
 
     /* socket()
      * Returns a socket object. If it doesn"t exist, it"s created.
