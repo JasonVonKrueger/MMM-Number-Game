@@ -4,7 +4,7 @@ const NodeHelper = require("node_helper");
 
 module.exports = NodeHelper.create({
 	start: function() {
-        this.started = false;
+        //this.started = false;
 
        // this.sendSocketNotification('RENUMBER_STARTED', { foo: 'bar' });
 
