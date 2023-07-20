@@ -175,9 +175,23 @@ function handlePlayClick(e) {
     document.querySelector('.numpad').classList.remove('hidden');
 }
 
+function handleNumPadButton(e) {
+    const number = this.innerHTML;
+    console.log(number);
+
+    Remote.sendSocketNotification('NUMPAD_BUTTON_CLICK', {
+        number: number
+    });
+}
+
 // Initialize socket connection
 console.log('init remote');
 Remote.sendSocketNotification("REMOTE_CLIENT_CONNECTED");
 Remote.sendSocketNotification("REMOTE_ACTION", { data: "translations" });
 
 document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
+
+document.querySelectorAll('.numpad-button').forEach(function(btn) {
+    btn.addEventListener('touch', handleNumPadButton, false);
+    btn.addEventListener('click', handleNumPadButton, false);
+});
