@@ -10,6 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/js/socketclient.js"></script>
+    <script type="text/javascript" src="remote.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -39,32 +40,32 @@
     </div>
             
     <script>
-        function handleNumPadButton(e) {
-            const number = this.innerHTML;
-            console.log(number);
+        // function handleNumPadButton(e) {
+        //     const number = this.innerHTML;
+        //     console.log(number);
         
-            socket.sendSocketNotification('NUMPAD_BUTTON_CLICK', {
-                number: number
-            });
-        }
+        //     socket.sendSocketNotification('NUMPAD_BUTTON_CLICK', {
+        //         number: number
+        //     });
+        // }
 
-        function handlePlayClick(e) {
-            document.querySelector('.landing').classList.add('hidden');
-            document.querySelector('.numpad').classList.remove('hidden');
-        }
+        // function handlePlayClick(e) {
+        //     document.querySelector('.landing').classList.add('hidden');
+        //     document.querySelector('.numpad').classList.remove('hidden');
+        // }
 
-        //if (typeof socket === 'undefined') {
-            const socket = new MMSocket('MMM-Renumber');
+        // //if (typeof socket === 'undefined') {
+        //     const socket = new MMSocket('MMM-Renumber');
            
-            //const socket = io();
-        //}
+        //     //const socket = io();
+        // //}
 
-        document.querySelectorAll('.numpad-button').forEach(function(btn) {
-            btn.addEventListener('touch', handleNumPadButton, false);
-            btn.addEventListener('click', handleNumPadButton, false);
-        });
+        // document.querySelectorAll('.numpad-button').forEach(function(btn) {
+        //     btn.addEventListener('touch', handleNumPadButton, false);
+        //     btn.addEventListener('click', handleNumPadButton, false);
+        // });
 
-        document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
+        // document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
 
     </script>
 
