@@ -106,6 +106,8 @@ Module.register('MMM-Renumber', {
       //document.querySelector('#mmm-renumber').classList.remove('hidden');
       this.className = '';
       this.updateDom();
+
+      this.showNumber();
     }
 
     
