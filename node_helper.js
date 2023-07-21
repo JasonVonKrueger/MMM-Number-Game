@@ -48,8 +48,8 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         var self = this;
-        self.sendSocketNotification("IP_ADDRESSES", 'Bob');
-        console.info('socket notification received');
+        self.sendSocketNotification(notification, payload);
+        console.log('socket notification received');
        // Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
         // if (notification === 'RENUMBER_STARTED' && this.started == false) {     
         //     const self = this;
