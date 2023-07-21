@@ -4,12 +4,10 @@ Module.register('MMM-Renumber', {
   },
 
   start() {
-    //const self = this;
-    this.hide();
+    this.className = 'hidden';
     this.numbers = [];
     this.player_guesses = [];
     this.level = 1;
-    this.hidden = true;
     this.max_levels = this.config.maxLevels || 10;
 
     //Log.info("Starting module: " + this.name);
@@ -22,6 +20,7 @@ Module.register('MMM-Renumber', {
 
   getDom() {
     const wrapper = document.createElement('div');
+    wrapper.className = this.className;
 
     let markup = `
           <div id="mmm-renumber">
@@ -105,7 +104,8 @@ Module.register('MMM-Renumber', {
   socketNotificationReceived(notification, payload) {
     if (notification === 'RENUMBER_CLIENT_CONNECTED') {
       //document.querySelector('#mmm-renumber').classList.remove('hidden');
-      this.hide();
+      this.className = '';
+      this.updateDom();
     }
 
     
