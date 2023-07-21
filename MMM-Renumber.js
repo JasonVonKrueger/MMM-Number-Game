@@ -27,7 +27,7 @@ Module.register('MMM-Renumber', {
             <div class="title">Renumber</div>
             <div id="game_box">
             <div id="number"></div>
-            <div id="player_message" class="shidden">
+            <div id="player_message" class="hidden">
               Enter the number you saw: 
               <input type="text" id="player_guess" />
             </div>
@@ -63,7 +63,11 @@ Module.register('MMM-Renumber', {
     let n = Math.floor(Math.random() * 9)
     document.querySelector('#number').innerHTML = n;
 
+    console.log('The number is: ' + n);
+
     await this.sleep(1500);
+
+    console.log('I waited!');
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
   },
