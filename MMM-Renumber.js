@@ -38,9 +38,6 @@ Module.register('MMM-Renumber', {
     `;
 
     wrapper.innerHTML = markup;
-    //this.sendSocketNotification('RENUMBER_', this.config);
-    //self.showNumber();
-    //wrapper.classList.add('hidden');
     return wrapper;
 
   },
@@ -108,6 +105,7 @@ Module.register('MMM-Renumber', {
   socketNotificationReceived(notification, payload) {
     if (notification === 'RENUMBER_CLIENT_CONNECTED') {
       //document.querySelector('#mmm-renumber').classList.remove('hidden');
+      this.hide();
     }
 
     
