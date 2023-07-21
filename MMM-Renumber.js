@@ -3,7 +3,7 @@ Module.register('MMM-Renumber', {
 
   },
 
-  start: function() {
+  start() {
     //const self = this;
     this.numbers = [];
     this.player_guesses = [];
@@ -15,11 +15,11 @@ Module.register('MMM-Renumber', {
     Log.info("Starting module: " + this.name + " with identifier: " + this.identifier);
   },
 
-  getStyles: function() {
+  getStyles() {
     return ["MMM-Renumber.css"];
   },
 
-  getDom: function() {
+  getDom() {
     const wrapper = document.createElement('div');
 
     let markup = `
@@ -27,7 +27,7 @@ Module.register('MMM-Renumber', {
             <div class="title">Renumber</div>
             <div id="game_box">
             <div id="number"></div>
-            <div id="player_message" class="hidden">
+            <div id="player_message" class="shidden">
               Enter the number you saw: 
               <input type="text" id="player_guess" />
             </div>
@@ -94,7 +94,8 @@ Module.register('MMM-Renumber', {
   //   this.socket().sendNotification(notification, payload);
   // },
 
-  notificationReceived: function(notification, payload, sender) {
+  notificationReceived(notification, payload, sender) {
+    this.sendSocketNotification("blah_blah");
     if (sender) {
       Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
     } else {
@@ -102,7 +103,7 @@ Module.register('MMM-Renumber', {
     }
   },
 
-  socketNotificationReceived: function(notification, payload) {
+  socketNotificationReceived(notification, payload) {
     document.querySelector('.title').innerHTML = 'Bob';
     //this.hide();
     //document.querySelector('#number').innerHTML = JSON.stringify(payload);
