@@ -23,7 +23,7 @@ Module.register('MMM-Renumber', {
     const wrapper = document.createElement('div');
 
     let markup = `
-          <div id="mmm-renumber">
+          <div id="mmm-renumber" class="hidden">
             <div class="title">Renumber</div>
             <div id="game_box">
             <div id="number"></div>
@@ -96,7 +96,7 @@ Module.register('MMM-Renumber', {
 
   notificationReceived(notification, payload, sender) {
     this.sendSocketNotification("blah_blah");
-    
+
     if (sender) {
       Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
     } else {
@@ -105,7 +105,11 @@ Module.register('MMM-Renumber', {
   },
 
   socketNotificationReceived(notification, payload) {
-    document.querySelector('.title').innerHTML = 'Bob';
+    if (notification === 'RENUMBER_CLIENT_CONNECTED') {
+      document.querySelector('#mmm-renumber').classList.remove('hidden');
+    }
+
+    
     //this.hide();
     //document.querySelector('#number').innerHTML = JSON.stringify(payload);
     Log.log(this.name + " received a fat socket notification: " + notification + " - Payload: " + payload);
