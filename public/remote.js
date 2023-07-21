@@ -61,6 +61,8 @@ var Remote = {
 function handlePlayClick(e) {
     document.querySelector('.landing').classList.add('hidden');
     document.querySelector('.numpad').classList.remove('hidden');
+
+    Remote.sendSocketNotification("RENUMBER_CLIENT_CONNECTED");
 }
 
 function handleNumPadButton(e) {
@@ -72,7 +74,7 @@ function handleNumPadButton(e) {
     });
 }
 
-Remote.sendSocketNotification("RENUMBER_CLIENT_CONNECTED");
+
 
 document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
 
