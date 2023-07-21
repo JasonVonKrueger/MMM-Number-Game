@@ -95,7 +95,7 @@ Module.register('MMM-Renumber', {
   // },
 
   notificationReceived(notification, payload, sender) {
-    this.sendSocketNotification("blah_blah");
+    //this.sendSocketNotification("blah_blah");
     if (sender) {
       Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
     } else {
