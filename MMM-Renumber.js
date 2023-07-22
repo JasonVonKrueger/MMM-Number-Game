@@ -5,7 +5,7 @@ Module.register('MMM-Renumber', {
 
   start() {
     this.className = 'hidden';
-    this.number = 8;
+    this.number = Math.floor(Math.random() * 9);
     this.numbers = [];
     this.player_guesses = [];
     this.level = 1;
@@ -65,13 +65,11 @@ Module.register('MMM-Renumber', {
 
   async showNumber() {
     let n = Math.floor(Math.random() * 9)
-    document.querySelector('#number').innerHTML = n;
+    //document.querySelector('#number').innerHTML = n;
 
-    console.log('The number is: ' + n);
+    //console.log('The number is: ' + n);
 
-    await this.sleep(1500);
-
-    console.log('I waited!');
+    await this.sleep(2500);
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
   },
