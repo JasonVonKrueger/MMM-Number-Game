@@ -5,6 +5,7 @@ Module.register('MMM-Renumber', {
 
   start() {
     this.className = 'hidden';
+    this.number = 8;
     this.numbers = [];
     this.player_guesses = [];
     this.level = 1;
@@ -26,7 +27,10 @@ Module.register('MMM-Renumber', {
           <div id="mmm-renumber">
             <div class="title">Renumber</div>
             <div id="game_box">
-            <div id="number"></div>
+            <div>Remember this number:
+              <span id="number">${this.number}</span>
+            </div>
+            
             <div id="player_message" class="hidden">
               Enter the number you saw: 
               <input type="text" id="player_guess" />
