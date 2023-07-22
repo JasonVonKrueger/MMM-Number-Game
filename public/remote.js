@@ -58,6 +58,10 @@ var Remote = {
  
 };
 
+function handleExitClick(e) {
+    
+}
+
 function handlePlayClick(e) {
     document.querySelector('.landing').classList.add('hidden');
     document.querySelector('.numpad').classList.remove('hidden');
@@ -73,6 +77,8 @@ function handleNumPadButton(e) {
         number: number
     });
 }
+
+document.querySelector('#btn_exit').addEventListener('click', handleExitClick, false);
 
 document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
 

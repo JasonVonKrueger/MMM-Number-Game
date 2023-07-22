@@ -4,46 +4,11 @@ const NodeHelper = require("node_helper");
 
 module.exports = NodeHelper.create({
 	start: function() {
-        //this.started = false;
 
-       // this.sendSocketNotification('RENUMBER_STARTED', { foo: 'bar' });
-
-        // this.expressApp.get("/renumber", function (req, res) {
-        //     res.send("GET request to /renumber");
-        // });
-
-        //this.expressApp.use("/" + this.name, express.static(this.path + "/public"));
-
-        // fs.readFile(path.resolve(__dirname + "/renumber.html"), function(err, data) {
-        //     self.template = data.toString();
-        // });
 	},
 
     createRoutes: function() {
         var self = this;
-
-        // this.expressApp.get("/renumber.html", function(req, res) {
-        //     if (self.template === "") {
-        //         res.send(503);
-        //     } else {
-        //         res.contentType("text/html");
-        //         res.set('Content-Security-Policy', "frame-ancestors http://*:*")
-        //         var transformedData = self.fillTemplates(self.template);
-        //         res.send(transformedData);
-        //     }
-        // });
-
-        // this.expressApp.get("/get", function(req, res) {
-        //     var query = url.parse(req.url, true).query;
-
-        //     self.answerGet(query, res);
-        // });
-
-        // this.expressApp.post("/post", function(req, res) {
-        //     var query = url.parse(req.url, true).query;
-
-        //     self.answerPost(query, req, res);
-        // });
     },
 
     socketNotificationReceived: function(notification, payload) {
