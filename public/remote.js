@@ -59,7 +59,7 @@ var Remote = {
 };
 
 function handleExitClick(e) {
-    
+
 }
 
 function handlePlayClick(e) {
@@ -73,7 +73,7 @@ function handleNumPadButton(e) {
     const number = this.innerHTML;
     console.log(number);
 
-    Remote.sendSocketNotification('NUMPAD_BUTTON_CLICK', {
+    Remote.sendSocketNotification('RENUMBER_NUMPAD_BUTTON_CLICK', {
         number: number
     });
 }

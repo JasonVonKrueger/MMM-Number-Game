@@ -116,6 +116,10 @@ Module.register('MMM-Renumber', {
       this.showNumber();
     }
 
+    if (notification === 'RENUMBER_NUMPAD_BUTTON_CLICK') {
+      handleGuess(payload);
+    }
+
     
     //this.hide();
     //document.querySelector('#number').innerHTML = JSON.stringify(payload);
