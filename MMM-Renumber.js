@@ -117,7 +117,7 @@ Module.register('MMM-Renumber', {
     }
 
     if (notification === 'RENUMBER_NUMPAD_BUTTON_CLICK') {
-      handleGuess(payload);
+      this.handleGuess(payload);
     }
 
     
