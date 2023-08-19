@@ -28,12 +28,12 @@ Module.register('MMM-Renumber', {
             <div class="title">Renumber</div>
             <div id="game_box">
             <div>Remember this number:
-              <span id="number">${this.number}</span>
+              <div id="number">${this.number}</div>
             </div>
             
             <div id="player_message" class="hidden">
               Enter the number you saw: 
-              <input type="text" id="player_guess" />
+              <div><input type="text" id="player_guess" /></div>
             </div>
             <div id="result_message"></div> 
             </div>
@@ -66,8 +66,9 @@ Module.register('MMM-Renumber', {
   },
 
   async showNumber() {
-    let n = Math.floor(Math.random() * 9);
+    this.number = Math.floor(Math.random() * 9);
     await this.sleep(2500);
+    this.updateDom();
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
     document.querySelector('#player_message').classList.remove('hidden');
@@ -81,9 +82,9 @@ Module.register('MMM-Renumber', {
 
     this.numbers.length = 0;
     this.player_guesses.length = 0;
-    this.querySelector('#player_message').classList.add('hidden');
-    this.querySelector('#player_guess').value = '';
-    this.querySelector('#result_message').innerHTML = '';
+    document.querySelector('#player_message').classList.add('hidden');
+    document.querySelector('#player_guess').value = '';
+    document.querySelector('#result_message').innerHTML = '';
 
     //this.showNumber();
   },
