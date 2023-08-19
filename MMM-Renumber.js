@@ -116,15 +116,15 @@ Module.register('MMM-Renumber', {
       this.showNumber();
     }
 
-    // if (notification === 'RENUMBER_NUMPAD_BUTTON_CLICK') {
-    //   console.log(payload)
-    //   //this.handleGuess(payload);
-    // }
+    if (notification === 'RENUMBER_NUMPAD_BUTTON_CLICK') {
+      console.log(payload)
+      //this.handleGuess(payload);
+    }
 
     
     //this.hide();
     //document.querySelector('#number').innerHTML = JSON.stringify(payload);
-    Log.log(this.name + " received a fat socket notification: " + notification + " - Payload: " + payload);
+    Log.log(this.name + " received a fat socket notification: " + notification + " - Payload: " + JSON.stringify(payload));
   },
 
 })
