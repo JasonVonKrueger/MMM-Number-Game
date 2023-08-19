@@ -66,9 +66,8 @@ Module.register('MMM-Renumber', {
   },
 
   async showNumber() {
-    this.number = Math.floor(Math.random() * 9);
+    let n = Math.floor(Math.random() * 9);
     await this.sleep(2500);
-    this.updateDom();
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
     document.querySelector('#player_message').classList.remove('hidden');
