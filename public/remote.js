@@ -79,7 +79,6 @@ function handleNumPadButton(e) {
 }
 
 document.querySelector('#btn_exit').addEventListener('click', handleExitClick, false);
-
 document.querySelector('.play-button').addEventListener('click', handlePlayClick, false);
 
 document.querySelectorAll('.numpad-button').forEach(function(btn) {

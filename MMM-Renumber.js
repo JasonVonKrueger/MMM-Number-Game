@@ -46,16 +46,18 @@ Module.register('MMM-Renumber', {
   async handleGuess(data) {
     document.querySelector('#player_guess').value += data.number;
     this.player_guesses.push(parseInt(data.number));
+
     console.log('guesses: ' + this.player_guesses);
+    console.log('numbers: ' + this.numbers);
 
     if (this.player_guesses.length === this.numbers.length) {
       if (this.player_guesses.join('') === this.numbers.join('')) {
-        this.querySelector('#result_message').innerHTML = 'Good job!';
+        document.querySelector('#result_message').innerHTML = 'Good job!';
         await this.sleep(1200);
         reset(true);
       } 
       else {
-        this.querySelector('#result_message').innerHTML = 'Nope! Try again.';
+        document.querySelector('#result_message').innerHTML = 'Nope! Try again.';
         await this.sleep(1200);
         reset(false);
       }
