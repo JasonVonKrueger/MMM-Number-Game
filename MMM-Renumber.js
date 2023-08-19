@@ -72,6 +72,7 @@ Module.register('MMM-Renumber', {
     await this.sleep(2500);
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
+    document.querySelector('#player_message').classList.remove('hidden');
   },
 
   reset(result) {
