@@ -11,7 +11,6 @@ Module.register('MMM-Renumber', {
     this.level = 1;
     this.max_levels = this.config.maxLevels || 10;
 
-    //Log.info("Starting module: " + this.name);
     Log.info("Starting module: " + this.name + " with identifier: " + this.identifier);
   },
 
@@ -42,12 +41,12 @@ Module.register('MMM-Renumber', {
 
     wrapper.innerHTML = markup;
     return wrapper;
-
   },
 
   async handleGuess(data) {
     document.querySelector('#player_guess').value += data.number;
     this.player_guesses.push(parseInt(data.number));
+    console.log('guesses: ' + this.player_guesses);
 
     if (this.player_guesses.length === this.numbers.length) {
       if (this.player_guesses.join('') === this.numbers.join('')) {
@@ -64,11 +63,7 @@ Module.register('MMM-Renumber', {
   },
 
   async showNumber() {
-    let n = Math.floor(Math.random() * 9)
-    //document.querySelector('#number').innerHTML = n;
-
-    //console.log('The number is: ' + n);
-
+    let n = Math.floor(Math.random() * 9);
     await this.sleep(2500);
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
