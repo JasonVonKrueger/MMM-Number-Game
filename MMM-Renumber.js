@@ -66,7 +66,7 @@ Module.register('MMM-Renumber', {
   },
 
   async showNumber() {
-    let n = Math.floor(Math.random() * 9);
+   // let n = Math.floor(Math.random() * 9);
     await this.sleep(2500);
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
@@ -97,8 +97,6 @@ Module.register('MMM-Renumber', {
   // },
 
   notificationReceived(notification, payload, sender) {
-    this.sendSocketNotification("blah_blah");
-
     if (sender) {
       Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
     } else {
