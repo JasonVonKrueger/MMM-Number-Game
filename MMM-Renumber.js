@@ -53,12 +53,12 @@ Module.register('MMM-Renumber', {
 
     if (this.player_guesses.length === this.numbers.length) {
       if (this.player_guesses.join('') === this.numbers.join('')) {
-        document.querySelector('#result_message').innerHTML = 'Good job!';
+        this.querySelector('#result_message').innerHTML = 'Good job!';
         await this.sleep(1200);
         this.reset(true);
       } 
       else {
-        document.querySelector('#result_message').innerHTML = 'Nope! Try again.';
+        this.querySelector('#result_message').innerHTML = 'Nope! Try again.';
         await this.sleep(1200);
         this.reset(false);
       }
@@ -66,7 +66,7 @@ Module.register('MMM-Renumber', {
   },
 
   async showNumber() {
-   // let n = Math.floor(Math.random() * 9);
+    let n = Math.floor(Math.random() * 9);
     await this.sleep(2500);
 
     document.querySelector('#number').innerHTML = document.querySelector('#number').innerHTML.replace(/\w|\W/gi, '*');
@@ -81,9 +81,9 @@ Module.register('MMM-Renumber', {
 
     this.numbers.length = 0;
     this.player_guesses.length = 0;
-    document.querySelector('#player_message').classList.add('hidden');
-    document.querySelector('#player_guess').value = '';
-    document.querySelector('#result_message').innerHTML = '';
+    this.querySelector('#player_message').classList.add('hidden');
+    this.querySelector('#player_guess').value = '';
+    this.querySelector('#result_message').innerHTML = '';
 
     //this.showNumber();
   },
@@ -97,6 +97,8 @@ Module.register('MMM-Renumber', {
   // },
 
   notificationReceived(notification, payload, sender) {
+    this.sendSocketNotification("blah_blah");
+    
     if (sender) {
       Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
     } else {
