@@ -53,12 +53,12 @@ Module.register('MMM-Renumber', {
 
     if (this.player_guesses.length === this.numbers.length) {
       if (this.player_guesses.join('') === this.numbers.join('')) {
-        this.querySelector('#result_message').innerHTML = 'Good job!';
+        document.querySelector('#result_message').innerHTML = 'Good job!';
         await this.sleep(1200);
         this.reset(true);
       } 
       else {
-        this.querySelector('#result_message').innerHTML = 'Nope! Try again.';
+        document.querySelector('#result_message').innerHTML = 'Nope! Try again.';
         await this.sleep(1200);
         this.reset(false);
       }
@@ -98,7 +98,7 @@ Module.register('MMM-Renumber', {
 
   notificationReceived(notification, payload, sender) {
     this.sendSocketNotification("blah_blah");
-    
+
     if (sender) {
       Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
     } else {
